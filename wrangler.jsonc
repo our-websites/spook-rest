@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "spook-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "spook-bio-v3",
+          "database_id": "970954aa-a9f6-4b4e-862c-04675cb8e14f"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "ecb40d94df1e4ffbb75008b0874ccb8f",
+            "binding": "SECRET",
+            "secret_name": "Spook_Key"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
